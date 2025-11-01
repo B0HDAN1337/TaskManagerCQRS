@@ -16,9 +16,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowBudgetMAnagment", policy =>
+    options.AddPolicy("Allow", policy =>
     {
-        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+
     });
 });
 
@@ -34,6 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("Allow");
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
