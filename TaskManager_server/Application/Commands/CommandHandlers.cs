@@ -30,4 +30,23 @@ namespace TaskManager_server.Application.Commands
             return Task.FromResult(true);
         }
     }
+
+    public class DeleteTaskCommandHandler : IRequestHandler<DeleteTaskCommand, bool>
+    {
+        private readonly TaskRepository _repository;
+        public DeleteTaskCommandHandler(TaskRepository repository) => _repository = repository;
+
+        public async Task<bool> Handle(DeleteTaskCommand request, CancellationToken cancellationToken)
+        {
+            var task = _repository.GetById(request.Id);
+            if (task == null)
+            {
+                return false;
+            }
+
+            _repository.Delete(request.Id);
+            return true;
+           
+        }
+    }
 }

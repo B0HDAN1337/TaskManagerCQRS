@@ -37,6 +37,20 @@ namespace TaskManager_server.Controller
             if (success)
             {
                 return Ok("Task completed");
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpDelete("{id}/delete")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var delete = await _mediator.Send(new DeleteTaskCommand(id));
+            if(delete)
+            {
+                return Ok("Task deleted");
             } else
             {
                 return NotFound();
