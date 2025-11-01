@@ -1,9 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using CQRS.Application.Commands;
-using CQRS.Application.Queries;
+using TaskManager_server.Application.Commands;
+using TaskManager_server.Application.Queries;
 
-namespace CQRS.Controller
+namespace TaskManager_server.Controller
 {
     [ApiController]
     [Route("api/[controller]")]

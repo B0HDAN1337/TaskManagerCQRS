@@ -1,4 +1,4 @@
-namespace CQRS.Domain
+namespace TaskManager_server.Domain
 {
     public class TaskItem
     {

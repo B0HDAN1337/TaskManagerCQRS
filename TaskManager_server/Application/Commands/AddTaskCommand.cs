@@ -1,7 +1,7 @@
 using MediatR;
-using CQRS.Domain;
+using TaskManager_server.Domain;
 
-namespace CQRS.Application.Commands
+namespace TaskManager_server.Application.Commands
 {
     public record AddTaskCommand(string Title) : IRequest<TaskItem>;
 }

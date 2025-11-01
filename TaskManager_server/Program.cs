@@ -1,5 +1,5 @@
 using MediatR;
-using CQRS.Infrastructure;
+using TaskManager_server.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

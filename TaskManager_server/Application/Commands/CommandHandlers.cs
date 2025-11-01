@@ -1,8 +1,8 @@
 using MediatR;
-using CQRS.Domain;
-using CQRS.Infrastructure;
+using TaskManager_server.Domain;
+using TaskManager_server.Infrastructure;
 
-namespace CQRS.Application.Commands
+namespace TaskManager_server.Application.Commands
 {
     public class AddTaskCommandHandler : IRequestHandler<AddTaskCommand, TaskItem>
     {

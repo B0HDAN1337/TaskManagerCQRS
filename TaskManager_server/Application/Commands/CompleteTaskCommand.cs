@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace CQRS.Application.Commands
+namespace TaskManager_server.Application.Commands
 {
     public record CompleteTaskCommand(Guid Id) : IRequest<bool>;
 }

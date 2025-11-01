@@ -1,8 +1,8 @@
 using MediatR;
-using CQRS.Domain;
-using CQRS.Infrastructure;
+using TaskManager_server.Domain;
+using TaskManager_server.Infrastructure;
 
-namespace CQRS.Application.Queries
+namespace TaskManager_server.Application.Queries
 {
     public class GetAllTasksQueryHandler : IRequestHandler<GetAllTasksQuery, IEnumerable<TaskItem>>
     {

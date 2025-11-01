@@ -1,6 +1,6 @@
-using CQRS.Domain;
+using TaskManager_server.Domain;
 
-namespace CQRS.Infrastructure
+namespace TaskManager_server.Infrastructure
 {
     public class TaskRepository
     {
