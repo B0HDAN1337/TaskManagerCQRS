@@ -6,12 +6,15 @@ namespace TaskManager_server.Application.Queries
 {
     public class GetAllTasksQueryHandler : IRequestHandler<GetAllTasksQuery, IEnumerable<TaskItem>>
     {
-        private readonly TaskRepository _repo;
-        public GetAllTasksQueryHandler(TaskRepository repo) => _repo = repo;
-
-        public Task<IEnumerable<TaskItem>> Handle(GetAllTasksQuery request, CancellationToken cancellationToken)
+        private readonly TaskReadRepository _readRepository;
+        public GetAllTasksQueryHandler(TaskReadRepository readRepository)
         {
-            return Task.FromResult(_repo.GetAll());
+            _readRepository = readRepository;
+        }
+
+        public async Task<IEnumerable<TaskItem>> Handle(GetAllTasksQuery request, CancellationToken cancellationToken)
+        {
+            return await _readRepository.GetAllAsync();
         }
     }
 }
